@@ -19,10 +19,12 @@ var	self		= this,
 	$contents	= self.element,
 	$container	= $contents.wrap('<div class="ui-drawer-container"></div>').parent(),
 	$drawer		= $container.wrap('<div class="ui-widget ui-drawer"></div>').parent(),
-	$handle		= $container.append('<div class="ui-widget-header ui-drawer-handle"></div>').children().last();
+	$handle		= $container.append('<div class="ui-widget-header ui-drawer-handle"></div>').children().last(),
+	$handleIcon	= $handle.append('<div class="ui-icon"></div>').children();
 
-$contents.addClass('ui-widget-content ui-drawer-content ui-corner-br');
-$handle	.addClass('ui-corner-tr ui-corner-br ui-icon ui-icon-gear')
+$contents.addClass( 'ui-widget-content ui-drawer-content ui-corner-br' );
+$handleIcon.addClass( 'ui-icon ui-icon-gear' );
+$handle	.addClass( 'ui-corner-tr ui-corner-br' )
 	.click(function(){
 
 		if( $drawer.data('ui.drawer.expanded') ){
