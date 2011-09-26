@@ -20,23 +20,30 @@ var	self		= this,
 	$container	= $contents.wrap('<div class="ui-drawer-container"></div>').parent(),
 	$drawer		= $container.wrap('<div class="ui-widget ui-drawer"></div>').parent(),
 	$handle		= $container.append('<div class="ui-widget-header ui-drawer-handle"></div>').children().last(),
-	$handleIcon	= $handle.append('<div class="ui-icon"></div>').children();
+	$handleIcon	= $handle.append('<div class="ui-icon"></div>').children(),
+	$settingsIcon	= $handle.append('<div class="ui-drawer-settings ui-icon ui-icon-wrench"></div>').children().last();
 
 $contents.addClass( 'ui-widget-content ui-drawer-content ui-corner-br' );
-$handleIcon.addClass( 'ui-icon ui-icon-gear' );
-$handle	.addClass( 'ui-corner-tr ui-corner-br' )
-	.click(function(){
+$handle.addClass( 'ui-corner-tr ui-corner-br' );
+$handleIcon	.addClass( 'ui-icon ui-icon-gear' )
+		.click(function(){
 
-		if( $drawer.data('ui.drawer.expanded') ){
-			$drawer.animate({ left: -1 * $container.width() }, 500);
-			$drawer.data('ui.drawer.expanded', false);
-		}
-		else {
-			$drawer.animate({ left: -1 }, 500);
-			$drawer.data('ui.drawer.expanded', true);
-		}
+			if( $drawer.data('ui.drawer.expanded') ){
+				$drawer.animate({ left: -1 * $container.width() }, 500);
+				$drawer.data('ui.drawer.expanded', false);
+			}
+			else {
+				$drawer.animate({ left: -1 }, 500);
+				$drawer.data('ui.drawer.expanded', true);
+			}
 
-	});
+		});
+
+$settingsIcon.click(function(){
+
+	alert('foobar');
+
+});
 
 $drawer.css('left', -1 * $container.width());
 
