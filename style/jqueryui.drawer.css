@@ -1,0 +1,26 @@
+.ui-drawer {
+
+	position: fixed;
+	top: 5px;
+	left: -1px;
+
+}
+
+.ui-drawer .ui-drawer-handle {
+
+	position: absolute;
+	top: 0;
+	right: -18px;
+
+}
+
+.ui-drawer .ui-drawer-container {
+
+}
+
+.ui-drawer .ui-drawer-content {
+
+	padding: 5px 25px 5px 0;
+
+}
+
