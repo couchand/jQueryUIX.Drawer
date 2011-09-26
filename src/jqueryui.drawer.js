@@ -17,9 +17,10 @@ var	self		= this,
 	$handle		= $('<div class="ui-widget-header ui-drawer-handle"></div>'		).appendTo( $container	),
 	$handleIcon	= $('<div class="ui-icon"></div>'					).appendTo( $handle	);
 
-$contents	.addClass( 'ui-widget-content ui-drawer-content ui-corner-br' );
-$handle		.addClass( 'ui-corner-tr ui-corner-br' );
-$handleIcon	.addClass( 'ui-icon ui-icon-gear' )
+$contents	.addClass('ui-widget-content ui-drawer-content ui-corner-br')
+  .children()	.addClass('ui-helper-reset' );
+$handle		.addClass('ui-corner-tr ui-corner-br' );
+$handleIcon	.addClass('ui-icon ui-icon-gear' )
 		.click(function(){
 
 			if( $drawer.data('ui.drawer.expanded') ){

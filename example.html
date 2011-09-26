@@ -10,7 +10,13 @@
 
 $(function(){
 
-	$('#drawer').drawer();
+	$('#ul_drawer').drawer();
+
+	$('#p_drawer').drawer();
+	$('.ui-drawer:has(p)').css('top','120px');
+
+	$('#img_drawer').drawer();
+	$('.ui-drawer:has(img)').css('top','500px');
 
 });
 
@@ -18,7 +24,7 @@ $(function(){
 	</head>
 	<body style="background-color:#000;">
 
-<div id="drawer">
+<div id="ul_drawer">
 
 	<ul>
 
@@ -27,6 +33,18 @@ $(function(){
 		<li><a href="#">Baz</a></li>
 
 	</ul>
+
+</div>
+
+<div id="p_drawer">
+
+	<p>Look, just because I don't be givin' no man a foot massage don't make it right for Marsellus to throw Antwone into a glass motherfuckin' house, fuckin' up the way the nigger talks. Motherfucker do that shit to me, he better paralyze my ass, 'cause I'll kill the motherfucker, know what I'm sayin'?</p>
+
+</div>
+
+<div id="img_drawer">
+
+	<img src="http://library.thinkquest.org/3500/images/narwhal2.jpg" />
 
 </div>
 
