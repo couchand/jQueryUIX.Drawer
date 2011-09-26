@@ -8,11 +8,11 @@
  */
 (function($){
 	$.widget( 'ui.drawer', {
-/*
+
 		options: {
 			position: 'top left'
 		},
-*/
+
 		_create: function(){
 
 var	self		= this,
@@ -20,8 +20,8 @@ var	self		= this,
 	$container	= $contents	.wrap(	'<div class="ui-drawer-container"></div>'	).parent(),
 	$drawer		= $container	.wrap(	'<div class="ui-widget ui-drawer"></div>'	).parent(),
 	$handle		= $('<div class="ui-widget-header ui-drawer-handle"></div>'		).appendTo( $container	),
-	$handleIcon	= $('<div class="ui-icon"></div>'					).appendTo( $handle	);
-//	$moveIcon	= $handle	.append('<div class="ui-drawer-move ui-icon ui-icon-arrowthick-2-ne-sw"></div>'	).children().last();
+	$handleIcon	= $('<div class="ui-icon"></div>'					).appendTo( $handle	),
+	$moveIcon	= $handle	.append('<div class="ui-drawer-move ui-icon ui-icon-arrowthick-2-ne-sw"></div>'	).children().last();
 
 $contents	.addClass( 'ui-widget-content ui-drawer-content ui-corner-br' );
 $handle		.addClass( 'ui-corner-tr ui-corner-br' );
@@ -38,7 +38,7 @@ $handleIcon	.addClass( 'ui-icon ui-icon-gear' )
 			}
 
 		});
-/*
+
 $drawer.draggable({
 	handle:		'.ui-drawer-move',
 	snap:		'body',
@@ -72,17 +72,18 @@ $drawer.draggable({
 
 	}
 });
-*/
+
 $drawer.css('left', -1 * $container.width());
 
 		},
 
 		_setOption: function( key, value ){
-/*switch( key ) {
-	case "position":
-		break;
-}*/
-this._super( "_setOption", key, value );
+
+			switch( key ) {
+				case "position":
+					break;
+			}
+			this._super( "_setOption", key, value );
 
 		}
 
