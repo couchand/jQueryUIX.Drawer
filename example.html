@@ -9,15 +9,13 @@
 		<script type="text/javascript">
 
 $(function(){
-
 	$('#ul_drawer').drawer();
 
-	$('#p_drawer').drawer();
-	$('.ui-drawer:has(p)').css('top','120px');
+	$('#p_drawer').drawer({ side: 'right' });
+//	$('.ui-drawer:has(p)').css('top','120px');
 
-	$('#img_drawer').drawer();
-	$('.ui-drawer:has(img)').css('top','500px');
-
+	$('#img_drawer').drawer({ side: 'top' });
+//	$('.ui-drawer:has(img)').css('top','500px');
 });
 
 		</script>
