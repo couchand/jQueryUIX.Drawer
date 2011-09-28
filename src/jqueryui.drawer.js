@@ -23,9 +23,10 @@ var	self		= this,
 	$handleIcon	= $('<div class="ui-icon"></div>'					).appendTo( $handle	),
 	$moveIcon	= $handle	.append('<div class="ui-drawer-move ui-icon ui-icon-arrowthick-2-ne-sw"></div>'	).children().last();
 
-$contents	.addClass( 'ui-widget-content ui-drawer-content ui-corner-br' );
-$handle		.addClass( 'ui-corner-tr ui-corner-br' );
-$handleIcon	.addClass( 'ui-icon ui-icon-gear' )
+$contents	.addClass('ui-widget-content ui-drawer-content ui-corner-br')
+  .children()	.addClass('ui-helper-reset' );
+$handle		.addClass('ui-corner-tr ui-corner-br' );
+$handleIcon	.addClass('ui-icon ui-icon-gear' )
 		.click(function(){
 
 			if( $drawer.data('ui.drawer.expanded') ){
@@ -83,6 +84,7 @@ $drawer.css('left', -1 * $container.width());
 				case "position":
 					break;
 			}
+
 			this._super( "_setOption", key, value );
 
 		}

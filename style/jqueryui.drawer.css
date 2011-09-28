@@ -4,6 +4,7 @@
 	top:		5px;
 	left:		-1px;
 	z-index:	9999;
+	max-width:	20%;
 
 }
 
@@ -15,33 +16,9 @@
 
 }
 
-.ui-drawer .ui-drawer-move {
-
-	position:	absolute;
-	top:		0;
-	left:		-16px;
-
-}
-
 .ui-drawer .ui-drawer-content {
 
-	padding:	5px 25px 5px 0;
+	padding:	15px 20px 15px 15px;
 
 }
-
-.ui-cover {
-	z-index:	9998;
-	width:		50%;
-	height:		50%;
-	position:	fixed;
-}
-
-.ui-cover-active {
-	background-color: #F83;
-}
-
-.ui-tl-cover { top:	0;	left:	0;	}
-.ui-tr-cover { top:	0;	right:	0;	}
-.ui-bl-cover { bottom:	0;	left:	0;	}
-.ui-br-cover { bottom:	0;	right:	0;	}
 
