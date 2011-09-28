@@ -16,7 +16,8 @@
 			offset:		'5%',
 			zIndex:		9999,
 			maxPull:	'20%',
-			startOpen:	false
+			startOpen:	false,
+			icon:		'gear'
 		},
 
 		_create: function(){
@@ -27,7 +28,9 @@ var	self		= this,
 	$contents	= $container.children().wrapAll('<div class="ui-drawer-content"></div>').css('position', 'relative')
 				.addClass('ui-widget-content').css('padding', '15px');
 	$handle		= $('<div class="ui-widget-header ui-drawer-handle"></div>'		).appendTo( $container	),
-	$handleIcon	= $('<div class="ui-icon"></div>'					).appendTo( $handle	);
+	$handleIcon	= $('<div class="ui-icon"></div>').appendTo( $handle ).addClass('ui-icon-' + self.options.icon);;
+
+self._push(0);
 
 $drawer		.addClass('ui-widget-content ui-drawer-content')
 		.css('position','fixed').css('z-index', self.options.zIndex)
@@ -67,7 +70,6 @@ $handle		.addClass(('left' === self.options.side	|| 'top' === self.options.side)
 
 		});
 
-$handleIcon	.addClass('ui-icon ui-icon-gear');
 /*
 if( 0 < $contents.children().first().filter('h1, h2, h3').size() )
 {
@@ -86,8 +88,10 @@ alert(head_text);
 }
 */
 $drawer.data('ui.drawer.expanded', self.options.startOpen);
-if( !self.options.startOpen ){
-	self._push();
+
+self._push(0);
+if( self.options.startOpen ){
+	self.pull();
 }
 
 /*
@@ -130,22 +134,30 @@ $handleIcon	.addClass('ui-icon ui-icon-gear')
 
 		},
 
-		_push: function(){
-			this.element.animate(((  'left' === this.options.side) ? {  left: -1 * this.element.width()  } :
-					(( 'right' === this.options.side) ? { right: -1 * this.element.width()  } :
-					((   'top' === this.options.side) ? {   top: -1 * this.element.height() } :
-					(('bottom' === this.options.side) ? {bottom: -1 * this.element.height() } : {}))))
-					, 500);
+		_push: function( time ){
+			this.element.animate(((  'left' === this.options.side) ? {  left: -2 - 1 * this.element.width()  } :
+					(( 'right' === this.options.side) ? { right: -2 - 1 * this.element.width()  } :
+					((   'top' === this.options.side) ? {   top: -2 - 1 * this.element.height() } :
+					(('bottom' === this.options.side) ? {bottom: -2 - 1 * this.element.height() } : {}))))
+					, time);
 			this.element.data('ui.drawer.expanded', false);
 		},
 
-		_pull: function(){
+		_pull: function( time ){
 			this.element.animate(((  'left' === this.options.side) ? {  left: -1 } :
 					(( 'right' === this.options.side) ? { right: -1 } :
 					((   'top' === this.options.side) ? {   top: -1 } :
 					(('bottom' === this.options.side) ? {bottom: -1 } : {}))))
-					, 500);
+					, time);
 			this.element.data('ui.drawer.expanded', true);
+		},
+
+		push: function(){
+			this._push(500);
+		},
+
+		pull: function(){
+			this._pull(500);
 		},
 
 		_setOption: function( key, value ){
