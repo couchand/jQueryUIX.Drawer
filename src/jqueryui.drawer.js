@@ -47,7 +47,8 @@ $handle		.addClass(('left' === self.options.side	|| 'top' === self.options.side)
 		.addClass(('left' === self.options.side || 'bottom' === self.options.side) ? 'ui-corner-tr' : '')
 		.addClass(('right' === self.options.side || 'top' === self.options.side) ? 'ui-corner-bl' : '')
 		.addClass(('right' === self.options.side || 'bottom' === self.options.side) ? 'ui-corner-tl' : '')
-		.css('position', 'absolute').css(self.options.origin,0)
+		.css('position', 'absolute')
+		.css(self.options.origin,0)
 		.css(
 			(  'left' === self.options.side ? 'right' :
 			( 'right' === self.options.side ? 'left'  :
@@ -66,9 +67,24 @@ $handle		.addClass(('left' === self.options.side	|| 'top' === self.options.side)
 
 		});
 
-$handleIcon	.addClass('ui-icon ui-icon-gear')
-
-
+$handleIcon	.addClass('ui-icon ui-icon-gear');
+/*
+if( 0 < $contents.children().first().filter('h1, h2, h3').size() )
+{
+	var head_text;
+	if( $contents.has('h1') ){
+		head_text = $contents.find('h1').text();
+	}
+	else if( $contents.has('h2') ){
+		head_text = $contents.find('h2').text();
+	}
+	else if( $contents.has('h3') ){
+		head_text = $contents.find('h3').text();
+	}
+alert(head_text);
+	$handle.css(self.options.side, '-1px').text(head_text);
+}
+*/
 $drawer.data('ui.drawer.expanded', self.options.startOpen);
 if( !self.options.startOpen ){
 	self._push();
@@ -115,10 +131,10 @@ $handleIcon	.addClass('ui-icon ui-icon-gear')
 		},
 
 		_push: function(){
-			this.element.animate(((  'left' === this.options.side) ? {  left: -1 * this.element.children().width()  } :
-					(( 'right' === this.options.side) ? { right: -1 * this.element.children().width()  } :
-					((   'top' === this.options.side) ? {   top: -1 * this.element.children().height() } :
-					(('bottom' === this.options.side) ? {bottom: -1 * this.element.children().height() } : {}))))
+			this.element.animate(((  'left' === this.options.side) ? {  left: -1 * this.element.width()  } :
+					(( 'right' === this.options.side) ? { right: -1 * this.element.width()  } :
+					((   'top' === this.options.side) ? {   top: -1 * this.element.height() } :
+					(('bottom' === this.options.side) ? {bottom: -1 * this.element.height() } : {}))))
 					, 500);
 			this.element.data('ui.drawer.expanded', false);
 		},
