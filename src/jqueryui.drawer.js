@@ -20,8 +20,7 @@ var	self		= this,
 	$container	= $contents	.wrap(	'<div class="ui-drawer-container"></div>'	).parent(),
 	$drawer		= $container	.wrap(	'<div class="ui-widget ui-drawer"></div>'	).parent(),
 	$handle		= $('<div class="ui-widget-header ui-drawer-handle"></div>'		).appendTo( $container	),
-	$handleIcon	= $('<div class="ui-icon"></div>'					).appendTo( $handle	),
-	$moveIcon	= $handle	.append('<div class="ui-drawer-move ui-icon ui-icon-arrowthick-2-ne-sw"></div>'	).children().last();
+	$handleIcon	= $('<div class="ui-icon"></div>'					).appendTo( $handle	);
 
 $contents	.addClass('ui-widget-content ui-drawer-content ui-corner-br')
   .children()	.addClass('ui-helper-reset' );
