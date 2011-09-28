@@ -39,7 +39,7 @@ $handleIcon	.addClass('ui-icon ui-icon-gear' )
 			}
 
 		});
-
+/*
 $drawer.draggable({
 	handle:		'.ui-drawer-move',
 	snap:		'body',
@@ -73,7 +73,7 @@ $drawer.draggable({
 
 	}
 });
-
+*/
 $drawer.css('left', -1 * $container.width());
 
 		},
