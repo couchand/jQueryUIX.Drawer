@@ -136,10 +136,10 @@ $handleIcon	.addClass('ui-icon ui-icon-gear')
 
 		_push: function( time ){
 			var $el = this.element.closest('.uix-drawer');
-			$el.animate	(((  'left' === this.options.side) ? {  left: -2 - 1 * this.element.width()  } :
-					(( 'right' === this.options.side) ? { right: -2 - 1 * this.element.width()  } :
-					((   'top' === this.options.side) ? {   top: -2 - 1 * this.element.height() } :
-					(('bottom' === this.options.side) ? {bottom: -2 - 1 * this.element.height() } : {}))))
+			$el.animate	(((  'left' === this.options.side) ? {  left: -2 - 1 * $el.width()  } :
+					(( 'right' === this.options.side) ? { right: -2 - 1 * $el.width()  } :
+					((   'top' === this.options.side) ? {   top: -2 - 1 * $el.height() } :
+					(('bottom' === this.options.side) ? {bottom: -2 - 1 * $el.height() } : {}))))
 					, time);
 			$el.data('uix.drawer.expanded', false);
 		},
