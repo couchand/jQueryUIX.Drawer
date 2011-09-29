@@ -61,7 +61,7 @@ $handle		.addClass(('left' === self.options.side	|| 'top' === self.options.side)
 		)
 		.click(function(){
 
-			if( $drawer.data('ui.drawer.expanded') ){
+			if( $drawer.data('uix.drawer.expanded') ){
 				self._push();
 			}
 			else {
