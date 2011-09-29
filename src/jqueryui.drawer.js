@@ -23,12 +23,12 @@
 		_create: function(){
 
 var	self		= this,
-	$drawer		= self.element.addClass('ui-widget ui-drawer');
-	$container	= $drawer.children().wrapAll('<div class="ui-drawer-container"></div>').closest('.ui-drawer-container');
-	$contents	= $container.children().wrapAll('<div class="ui-drawer-content"></div>').css('position', 'relative')
+	$contents	= self.element.addClass('uix-drawer-content').css('position', 'relative')
 				.addClass('ui-widget-content').css('padding', '15px');
-	$handle		= $('<div class="ui-widget-header ui-drawer-handle"></div>'		).appendTo( $container	),
-	$handleIcon	= $('<div class="ui-icon"></div>').appendTo( $handle ).addClass('ui-icon-' + self.options.icon);;
+	$container	= $contents.wrapAll('<div class="uix-drawer-container"></div>').closest('.uix-drawer-container');
+	$drawer		= $container.wrapAll('<div class="ui-widget uix-drawer"></div>').closest('.uix-drawer');
+	$handle		= $('<div class="ui-widget-header uix-drawer-handle"></div>'		).appendTo( $container	),
+	$handleIcon	= $('<div class="ui-icon"></div>').appendTo( $handle ).addClass('ui-icon-' + self.options.icon);
 
 self._push(0);
 
