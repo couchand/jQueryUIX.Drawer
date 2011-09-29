@@ -135,21 +135,23 @@ $handleIcon	.addClass('ui-icon ui-icon-gear')
 		},
 
 		_push: function( time ){
-			this.element.animate(((  'left' === this.options.side) ? {  left: -2 - 1 * this.element.width()  } :
+			var $el = this.element.closest('.uix-drawer');
+			$el.animate	(((  'left' === this.options.side) ? {  left: -2 - 1 * this.element.width()  } :
 					(( 'right' === this.options.side) ? { right: -2 - 1 * this.element.width()  } :
 					((   'top' === this.options.side) ? {   top: -2 - 1 * this.element.height() } :
 					(('bottom' === this.options.side) ? {bottom: -2 - 1 * this.element.height() } : {}))))
 					, time);
-			this.element.data('ui.drawer.expanded', false);
+			$el.data('uix.drawer.expanded', false);
 		},
 
 		_pull: function( time ){
-			this.element.animate(((  'left' === this.options.side) ? {  left: -1 } :
+			var $el = this.element.closest('.uix-drawer');
+			$el.animate	(((  'left' === this.options.side) ? {  left: -1 } :
 					(( 'right' === this.options.side) ? { right: -1 } :
 					((   'top' === this.options.side) ? {   top: -1 } :
 					(('bottom' === this.options.side) ? {bottom: -1 } : {}))))
 					, time);
-			this.element.data('ui.drawer.expanded', true);
+			$el.data('uix.drawer.expanded', true);
 		},
 
 		push: function(){
